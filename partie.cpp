@@ -8,8 +8,8 @@ Partie::Partie(string type_, int premierAJouer_) : type(type_), premierAJouer(pr
 
 void Partie::init(){
 	plateau;
-	joueur1 = new MinMax(char1, 0, 1);
-	joueur2 = new NeuralNetwork("neural_network_weight", char2, 1);
+	joueur1 = new Humain(char1, 0);
+	joueur2 = new MinMax(char2, 1, 6);
 }
 
 void Partie::changer(Joueur* actuel) const{

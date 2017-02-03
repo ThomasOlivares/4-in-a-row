@@ -23,7 +23,7 @@ class Train{
 		Train();
 		void loop();
 		void init();
-		void affichage(int &pourcentage);
+		void affichage(int &pourcentage, int num);
 		void changer(Joueur* actuel) const;
 		int jouer(int premierAJouer);
 		int tournoi(int iterations);

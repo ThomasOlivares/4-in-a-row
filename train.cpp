@@ -17,7 +17,7 @@ void Train::loop(){
 		int nbSurvivants = tournoi(nbManches);
 		reproduction2();
 		mutation(nbSurvivants);
-		affichage(pourcentage);
+		affichage(pourcentage, nb);
 	}
 	tournoi(nbIA);
 	cout << joueurs.size() << " IA indépartageables !" << endl;
@@ -25,11 +25,11 @@ void Train::loop(){
 	final.sauvegarde("neural_network_weight");
 }
 
-void Train::affichage(int &pourcentage){
-	if (100*(nb+1)/nbIterations > pourcentage){
+void Train::affichage(int &pourcentage, int num){
+	if (100*(num+1)/nbIterations > pourcentage){
 		int result = test();
 		pourcentage++;
-		cout << "Generation " << nb+1 << "/" << nbIterations << endl;
+		cout << "Generation " << num+1 << "/" << nbIterations << endl;
 		if (result > 0){
 			cout << "L'IA gagne !!!! : " << result << endl;
 		}

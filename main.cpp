@@ -29,8 +29,8 @@ void jeu(){
 
 int main(int argc, char* argv[]){
 	if (argc <= 1){
-		cout << "Vous devez passer 'play' ou 'train' en argument" << endl;
-		exit(EXIT_FAILURE);
+		jeu();
+		return(EXIT_SUCCESS);
 	}
 	
 	char* type = argv[1];
